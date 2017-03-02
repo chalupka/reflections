@@ -1,0 +1,103 @@
+
+clone a repository:
+--------------------
+git clone <repository>
+
+this creates a local copy of a remote repository. More specific: it creates a subdirectory named <repository.name> and copies the repository to this directory
+If you want to create the local repository in the current directory, use
+git clone <repository> .
+
+create a repository:
+--------------------
+git init
+
+Add a file to the staging area
+------------------------------
+git add <file>
+
+commit to the local repo
+------------------------
+git commit (launches configured editor to enter commit message)
+or 
+git commit -m "message"
+
+undo local change
+-----------------
+git checkout <file>
+
+remove a file from the staging area
+-----------------------------------
+
+git reset <file> (standard)
+
+git rm --cached <file> (if you have no commits yet)
+
+create a branch starting at a given commit:
+-------------------------------------------
+1. checkout the commit
+git checkout <commit-id>
+
+note: changes based on this commit would be lost without creating a branch, because they would create a commit that would be unreachable unless you note the id.
+
+2. create branch
+git checkout -b <branch>
+this creates a branch and is a shortcut for
+git branch <branch>
+git checkout <branch>
+
+
+merge a branch to master
+-------------------------
+1. you need to be on master 
+git checkout master
+
+you may want to use 'git branch' to verify. Lists all branches and marks the current branch with a *
+
+2. do the merge
+git merge <branch>
+
+git merges automatically if possible
+
+Abort a merge
+git merge --abort
+
+A merged branch can be deleted
+
+resolve merge conflict
+----------------------
+if a part of a file was modified concurrently and cannot be merged automatically, git marks the code that cannot be merged 
+CONFLICT (content): Merge conflict in game.js
+Automatic merge failed; fix conflicts and then commit the result.
+
+resolve conflicts
+
+git status
+
+# On branch easy-mode
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#       both modified:      game.js
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git add game.js
+git commit 
+
+show commits
+--------------
+git log
+
+graph of two branches
+git log --graph --oneline <b1> <b2>
+
+diff
+--------
+git diff <commit1> <commit2>
+
+sometimes does not work well on merged branches because commits on the timeline maybe not related
+here use 'show' to display the changes, that were introduced by a given commit
+git show <commit>

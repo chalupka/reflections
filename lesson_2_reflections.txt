@@ -13,12 +13,19 @@ git has to be told to track files of a given repository.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
+--------------------------------------------------------------------------------
+helps bundling commits 
 
 How can you use the staging area to make sure you have one commit per logical
 change?
+-----------------------------------------------------------------------------
+collect all changes for a logical commit in the staging are before committing
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+-------------------------------------------------------------------------------
+experemental features
+feature branches
 
 How do the diagrams help you visualize the branch structure?
 
